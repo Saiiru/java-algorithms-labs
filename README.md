@@ -9,3 +9,10 @@
 ---
 
 Este repositório ainda não contém uma aplicação executável documentada.
+
+
+## Verificação do código em 12/11/2026
+
+JDK 21 · tests/smoke.sh: 5 casos; valores negativos rejeitados e número da conta exige 8 dígitos
+
+**Limitações:** Os testes cobrem parte do catálogo, não todos os arquivos de exercícios. Valores double representam simulação didática, não dinheiro real.

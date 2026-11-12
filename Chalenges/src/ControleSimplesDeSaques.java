@@ -9,15 +9,25 @@ public class ControleSimplesDeSaques {
 
         double limiteDiario = scanner.nextDouble();
 
-        // Loop for para iterar sobre os saques
-        for (double valorSaque = -1; valorSaque != 0;) {
-            // Solicita ao usuário o valor do saque
-            valorSaque = scanner.nextDouble();
+        if (!Double.isFinite(limiteDiario) || limiteDiario < 0) {
+            System.out.println("Limite diario invalido.");
+            scanner.close();
+            return;
+        }
+
+        while (scanner.hasNextDouble()) {
+            double valorSaque = scanner.nextDouble();
 
             // Verifica se o valor do saque é zero, encerrando as transações
             if (valorSaque == 0) {
                 System.out.println("Transacoes encerradas.");
                 break;
+            }
+
+            // Valores negativos nunca devem aumentar o limite restante.
+            if (!Double.isFinite(valorSaque) || valorSaque < 0) {
+                System.out.println("Valor invalido.");
+                continue;
             }
 
             // Verifica se o valor do saque ultrapassa o limite diário

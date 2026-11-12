@@ -20,8 +20,8 @@ public class VerificadorNumeroConta {
     }
 
     private static void verificarNumeroConta(String numeroConta) throws IllegalArgumentException {
-        if (numeroConta.length() != 8) {
-            throw new IllegalArgumentException("Número de conta inválido. Digite exatamente 8 dígitos.");
+        if (!numeroConta.matches("[0-9]{8}")) {
+            throw new IllegalArgumentException("Número de conta inválido. Digite exatamente 8 dígitos numéricos.");
         }
     }
 }
