@@ -8,12 +8,16 @@ public class SimulacaoBancaria {
         Scanner scanner = new Scanner(System.in);
         double saldo = 0;
 
-        while (true) {
+        while (scanner.hasNextInt()) {
             int opcao = scanner.nextInt();
 
             switch (opcao) {
                 case 1: // Depositar
                     double valorDeposito = scanner.nextDouble();
+                    if (!Double.isFinite(valorDeposito) || valorDeposito <= 0) {
+                        System.out.println("Valor invalido.");
+                        break;
+                    }
                     saldo += valorDeposito;
                     // Display the updated balance after deposit
                     System.out.println("Saldo atual: " + saldo);
@@ -21,7 +25,9 @@ public class SimulacaoBancaria {
                     break;
                 case 2: // Sacar
                     double valorSaque = scanner.nextDouble();
-                    if (valorSaque <= saldo) {
+                    if (!Double.isFinite(valorSaque) || valorSaque <= 0) {
+                        System.out.println("Valor invalido.");
+                    } else if (valorSaque <= saldo) {
                         saldo -= valorSaque;
                         // Display the updated balance after withdrawal only if the transaction is
                         // successful

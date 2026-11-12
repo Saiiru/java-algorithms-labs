@@ -35,3 +35,14 @@ Formação DIO em fundamentos Java. Créditos, fontes de tutoriais e colaborador
 **Ainda não é:** sistema integrado à KORA, serviço em produção ou prova de maturidade sem testes.
 
 [Voltar ao portfólio SAIRU/BLACKSITE](https://saiiru.github.io/#projetos-independentes)
+
+
+## Verificação de funcionamento — 12/11/2026
+
+**Estado confirmado:** Laboratórios Java validados
+
+**Evidência:** JDK 21 · tests/smoke.sh: 5 casos; valores negativos rejeitados e número da conta exige 8 dígitos
+
+**Limites e bloqueios:** Os testes cobrem parte do catálogo, não todos os arquivos de exercícios. Valores double representam simulação didática, não dinheiro real.
+
+Esta validação não implica integração à KORA nem certificação de produção. Não alterar histórico, licença e autoria dos tutoriais.
